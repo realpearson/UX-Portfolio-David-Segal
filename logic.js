@@ -204,7 +204,7 @@ function setupSegwayState(){
 
     setInterval(() => {
         exampleP.innerText = getExample();
-    }, 5000)
+    }, 10000)
     
 }
 
