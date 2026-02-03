@@ -18,14 +18,14 @@ const TOS_TEXT = [
 
     "I hereby renege all standard legal remedies and agree that all disputes will be settled in the Dome of Dispute in the state of Delaware where I will fight other dissatisfied customers to the death in order to make a 30 second plea to an AI judge that upon dismissing my case will open a secret door to a fiery cavern beneath my feet where I will plummet to my imminent (but slow) death.",
 
-    "Our blood-thirst dominion over the world is our civic duty to reorganise the known universe in a way that aligns with our shareholders interests, what you are you an evil socialist or something? That’s what we thought now bow to the one true God: Capitalism (Capitalism is hereby defined as everything that only benefits us and harms you, so don’t get smart with us economists)",
+    "Our blood-thirst dominion over the world is part of our civic duty to reorganise the known universe in a way that aligns with our shareholders interests, what you are you an evil socialist or something?",
 
 ]
 
 const SEGWAY_TEXT = [
-    "When you find out the platform you use has implemented an invasive data collection policy and automatically opted you in without notifying you and made it hard to turn off or opt out... ", /*LinkedIn, Android, Samsung... */
+    "When you find out that the platform you use has implemented an invasive data collection policy and automatically opted you in without notifying you and made it hard to turn off or opt out... ", /*LinkedIn, Android, Samsung... */
 
-    "When purchase a product that after an update requires a subscription fee to continue using it...",
+    "When you purchase a product that after an update suddenly requires a subscription fee to continue using it...",
 
     "When a perfectly functional device you purchased cannot be used because the manufacturer has arbitrarily stopped supporting it...",
 
@@ -97,7 +97,7 @@ function setupLandingState(){
             if(switched) return;
             switched = true;
             denyBttn.textContent = "Accept";
-            denyBttn.addEventListener("pointerdown", checkIfSelected);
+            denyBttn.addEventListener("pointerdown", navigateToSegway);
 
         });
     }
@@ -150,6 +150,7 @@ function setupLandingState(){
 
     function SetupDarkPattern(){
         const darkPatterns = [buttonVanishMouseOver, buttonVanishClick, buttonSwitch, mouseFollow, mouseRepell];
+
         if(window.innerWidth <= 600) {
             darkPatterns.length = 0;
             darkPatterns.push(buttonVanishClick);
